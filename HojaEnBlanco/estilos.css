@@ -1,5 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:wght@100&family=Roboto+Slab&family=Space+Mono&family=Staatliches&display=swap');
+
+
+body {
+    background-color: rgb(5, 54, 96);
+}
+.cabecera{
+    color: white;
+    padding: 0px 0px 21px 0px;
+    display: flex;
+    justify-content: center;
+    font-family: 'Koulen', cursive;
+    font-size: 50px;
+    
+}
+
+
 div{
-    border: 3px solid #000;
+    border: 3px solid rgb(252, 252, 252);
 }
 .parent { 
     display: grid; 
@@ -9,16 +26,45 @@ div{
     grid-row-gap: 0px;  */
     grid-template-columns: 94px 94px 94px 94px 94px;
     grid-template-rows: 94px 94px 94px 94px;
-    border: none;
+   
+}
+.box {
+  
 }
 
-#perro {
+.perro {
     display: grid;
     grid-template-columns: 208px;
     grid-template-rows: 208px;
-    border: 3px solid #000;
+    /* border: 3px solid #000; */
     width: 208px;
     height: 208px;
+    cursor: move;
+}
+.perro0,
+.perro1
+.perro2
+.perro3
+.perro4
+.perro5
+.perro6
+.perro7
+.perro8
+.perro9
+.perro10
+.perro11
+.perro12
+.perro13
+.perro14
+.perro15
+.perro16
+.perro17
+.perro18
+.perro19
+.perro20
+{
+    width: 90px;
+    height: 90px;
 }
     
 #organizador {
@@ -26,6 +72,52 @@ div{
     justify-content: space-around;
     align-items: center;
 }
+#img_btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#btn {
+    margin-top: 40px;
+    width: 120px;
+    height: 60px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+
+}
+
+
+#btn:hover {
+   
+    background-color: white;
+    color:#000;
+    transition: 1s ease;
+}
+
+#btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50px;
+    background: transparent;
+    height: 50%;
+    width: 100%;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+    filter: blur(8px);
+    transition: 1s ease;
+}
+
+#btn:hover::before {
+    background: white;
+    top: 50px;
+}
+
+
     
 
     
