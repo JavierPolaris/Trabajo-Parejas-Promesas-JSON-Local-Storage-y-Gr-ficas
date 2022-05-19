@@ -13,66 +13,76 @@
 
 
 // // TODO  razas
-// fetch('https://dog.ceo/api/breeds/list/all')
+// fetch('https://dog.ceo/api/breeds/list/all')             //BORRAMOS AL NO UTILIZAR ESTE FETCH??
 //     .then(res=>res.json())
 //     .then(json=>console.log(json));
 
 // a user is redirected to a different page with the location.replace method
 let razas = []
-let hue0 = document.querySelector('.perro0');
-let hue1 = document.querySelector('.perro1');
-let hue2 = document.querySelector('.perro2');
-let hue3 = document.querySelector('.perro3');
-let hue4 = document.querySelector('.perro4');
-let hue5 = document.querySelector('.perro5');
-let hue6 = document.querySelector('.perro6');
-let hue7 = document.querySelector('.perro7');
-let hue8 = document.querySelector('.perro8');
-let hue9 = document.querySelector('.perro9');
-let hue10 = document.querySelector('.perro10');
-let hue11 = document.querySelector('.perro11');
-let hue12 = document.querySelector('.perro12');
-let hue13 = document.querySelector('.perro13');
-let hue14 = document.querySelector('.perro14');
-let hue15 = document.querySelector('.perro15');
-let hue16 = document.querySelector('.perro16');
-let hue17 = document.querySelector('.perro17');
-let hue18 = document.querySelector('.perro18');
-let hue19 = document.querySelector('.perro19');
-let huecos = [hue0, hue1, hue2, hue3, hue4, hue5, hue6, hue7, hue8, hue9, hue10, hue11, hue12, hue13, hue14, hue15, hue16, hue17, hue18, hue19];
-// console.log(huecos)
+let cont = 0;
+let contStorage = 1;
 //TODO boton random y almacenar la url de la imagen
 document.getElementById('btn').addEventListener('click', (e) => {
     e.preventDefault();
 
 
     fetch('https://dog.ceo/api/breeds/image/random')
-        .then(res => res.json())
-        .then((json) => {
-            var imagen = document.querySelector('.perro');
-            imagen.src = `${json.message}`;
+        .then(res => res.json())                                        //recoger los datos de la API
+        .then(json => crearImg(json));
 
 
-        });
+    function crearImg(url) {
+        document.getElementById('perro' + cont).src = `${url.message}`
+        document.getElementById('perro').src = `${url.message}`
 
-    var urlImg = document.getElementById('perro').src;
-    if (urlImg != 'http://127.0.0.1:5500/HojaEnBlanco/index.html' && urlImg != 'http://localhost:5500/HojaEnBlanco/index.html') {
-        let urlCortada = urlImg.split('/');
-    razas.push(urlCortada[4]);
-    console.log(razas);
-        // console.log(urlImg)
-    } else {
-        //alert('ERROR DE CARGA DE SRC')            primera carga de nuestra url en local
+        let urlCortada = (url.message.split('/'));
+        razas.push(urlCortada[4]);
+
+        let exi = localStorage.length;
+        // console.log(exi+'valor')
+
+        if (exi == 0) {
+            localStorage.setItem(`perro${cont}`, JSON.stringify({
+                raza: `${urlCortada[4]}`,
+                contador: `${contStorage}`
+            }))
+
+
+        } else {
+            for (let i = 0; i < localStorage.length; i++) {
+                let key = localStorage.key(i);
+
+                if (`${JSON.stringify(localStorage.getItem(key)).raza}` == urlCortada[4]) {
+
+                    console.log("REPEEEE")
+                    contStorage++;
+                } else {
+                    console.log('probar el else')
+                    localStorage.setItem(`perro${cont}`, JSON.stringify({
+                        raza: `${urlCortada[4]}`,
+                        contador: `${contStorage}`
+                    }))
+                }
+            }
+        }
     }
-    
+
+    // for(let i=0; i<localStorage.length; i++) {
+
+    //     let key = localStorage.key(i);
+    //     if (`${JSON.parse(localStorage.getItem(key)).raza}` == urlCortada[4]) {
+    //         console.log(key)
+    //         contStorage++;
+    //     }else {
+    //         localStorage.getItem(`perro${cont}`,JSON.stringify({
+    //             raza: `${urlCortada[4]}`,
+    //             contador: `${contStorage}`
+    //         }))
+    //     }
+    // }
 
 
+    cont++
    
-
-
-    // console.log(imagen.src)
-
-
 });
-
 
