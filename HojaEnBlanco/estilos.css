@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&family=Koulen&family=Montserrat:wght@100&family=Roboto+Slab&family=Space+Mono&family=Staatliches&display=swap');
-
+#grafica {
+    display: none;
+}
 .grafica{
-    width: 800px;
-    height: 400px; 
+
+    width: 696px;
+    height: 400px;
     display: flex;
     background-color: white;
-    align-items:center;
-    margin-top: 50px;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+    margin-top: 194px;
+    margin-left: 299px;
 }
 
 body {
@@ -20,6 +26,7 @@ body {
     background-repeat: no-repeat;
     width: 100%;
     height: 777px;
+    min-height: 100vh;
     /* background-position: center; */
 }
 
@@ -34,7 +41,7 @@ span {
     margin: 0 auto;
     text-shadow: 0 0 80px rgba(255, 255, 255, .5);
 
-    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+    background: url(/HojaEnBlanco/img/animated-text-fill.png) repeat-y;
     -webkit-background-clip: text;
     background-clip: text;
 
@@ -56,7 +63,7 @@ span {
 }
 
 #cabecera {
-    background-color: #ec4915;
+    background-color: #f9b522;
     margin-bottom: 33px;
     height: 121px;
     width: 600px;
@@ -89,46 +96,7 @@ span {
 
 
 }
-#cont_img::before {
-    content: "";
-    position: absolute;
-    width: 0;
-    left: 0;
-    height: 100%;
-    background-color: white;
-    animation: reveal 6s ease-in-out 0.5s forwards;
-    z-index: 1;
-}
-@keyframes reveal { 0% {
-    left: 0;
-    right: 100%;
-    width: 0;
-}
-50% {
-    left: 0;
-    right: 0;
-    width: 100%;
-}
-100% {
-    left: 100%;
-    width: 0;
-}
-}
 
-#cont_img img {
-    margin: 0;
-    animation: fade-in 1.1s linear 0.5s forwards;
-    opacity: 0;
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
 
 #salidaPerro {
     display: flex;
@@ -199,7 +167,7 @@ span {
 }
 
 #btn {
-    margin-top: 40px;
+    
     width: 120px;
     height: 60px;
     border: 2px solid white;
@@ -208,6 +176,8 @@ span {
     color: white;
     cursor: pointer;
     position: relative;
+    font-family: 'Grape Nuts', cursive;
+
 
 }
 
@@ -233,24 +203,33 @@ span {
 }
 
 #btn:hover::before {
-    background: white;
+    background: #f9b522;
     top: 50px;
+}
+.shadowBTN {
+    margin-top:-8px;
+}
+.btn {
+    margin-top: 10px;
 }
 
 footer {
+   
     display: flex;
-    background-color: #ec4815;
-    padding: 19px;
-    margin-top: -14px;
-    color: white;
-    position: relative;
-    left: -7px;
-    /* flex-wrap: wrap; */
+    background-color: #f9b522;
+    position: absolute;
+    bottom: -20px;
+    width: 100%;
+    padding: 10px;
     flex-direction: row-reverse;
+
+    
 }
 
 p{
+  color: white;  
   font-family: 'Grape Nuts', cursive;
+  margin-right: 40px;
 }
 
 
@@ -263,9 +242,22 @@ a:hover,
 a:focus,
 a:active,
 a.active {
-    color: yellow;
+    color: #ff0000;
 }
 
 .javiLink {
-    color: yellow;
+    color: #696565;
+}
+
+.btngr {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgb(255 255 255);
+    border-radius: 100px;
+    background-color: transparent;
+    color: rgb(255 255 255);
+    cursor: pointer;
+    position: relative;
+    bottom: 376px;
+    left: 707px;
 }
