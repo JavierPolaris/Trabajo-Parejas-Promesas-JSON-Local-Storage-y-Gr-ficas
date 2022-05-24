@@ -5,7 +5,7 @@ Presentación de Perretes.
 	1.¿Qué nos piden? ¿Cómo nos lo piden?.
 	2.Diseño de la solución.
 	3.Organización del equipo.
-	4.Codificación.
+	4.Codificación. 
 	5.Pruebas.
 	6.Finalización.
 	
