@@ -98,7 +98,7 @@ document.getElementById('btn').addEventListener('click', (e) => {
                     }]
                 },
                 options: {
-                    indexAxis: 'y',
+                    
                     scales: {
                         y: {
                             beginAtZero: true           //Asignamos el valor de comienzo de la grafica en 0
